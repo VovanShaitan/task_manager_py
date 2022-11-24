@@ -11,8 +11,7 @@ services:
       - 8000:8000
     depends_on:
       - db
-    environment:
-      &api-environment
+    environment: &api-environment
       DATABASE_NAME: postgres
       DATABASE_USER: postgres
       DATABASE_PASSWORD: postgres
