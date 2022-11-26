@@ -4,8 +4,7 @@ from django.db import models
 class Tag(models.Model):
     """Model definition for Tag."""
 
-    title = models.CharField(max_length=50)
-
+    title = models.CharField(max_length=255)
     class Meta:
         """Meta definition for Tag."""
 
@@ -14,4 +13,4 @@ class Tag(models.Model):
 
     def __str__(self):
         """Unicode representation of Tag."""
-        pass
+        return self.title
