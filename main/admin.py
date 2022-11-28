@@ -17,6 +17,12 @@ from .models import User, Task, Tag
 #     pass
 
 
+class CustomAdmin(UserAdmin):
+    list_display = ("username", "last_name", "first_name", "role", "email")
+    list_display_links = ("username",)
+
+
+
 class TaskAdmin(admin.ModelAdmin):
     list_display = (
         "id",
@@ -29,7 +35,7 @@ class TaskAdmin(admin.ModelAdmin):
         "priority",
         "assignee",
         "author",
-        "tag"
+        # "tags"
         )
     list_display_links = ("id", "title")
 
@@ -40,8 +46,7 @@ class TagAdmin(admin.ModelAdmin):
 
 
 
-# admin.site.unregister(User)
-admin.site.register(User, UserAdmin)
+admin.site.register(User, CustomAdmin)
 admin.site.register(Tag, TagAdmin)
 admin.site.register(Task, TaskAdmin)
 
