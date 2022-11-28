@@ -34,7 +34,7 @@ class Task(models.Model):
     )
     author = models.ForeignKey(User, on_delete=models.PROTECT, related_name="author")
     assignee = models.ForeignKey(
-        User, on_delete=models.PROTECT, related_name="assignee"
+        User, on_delete=models.PROTECT, related_name="assignee", default=None
     )
     tag = models.ManyToManyField(Tag)
 
