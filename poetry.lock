@@ -76,6 +76,18 @@ optional = false
 python-versions = "*"
 
 [[package]]
+name = "djangorestframework"
+version = "3.14.0"
+description = "Web APIs for Django, made easy."
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+django = ">=3.0"
+pytz = "*"
+
+[[package]]
 name = "flake8"
 version = "6.0.0"
 description = "the modular source code checker: pep8 pyflakes and co"
@@ -168,6 +180,14 @@ optional = false
 python-versions = ">=3.6"
 
 [[package]]
+name = "pytz"
+version = "2022.6"
+description = "World timezone definitions, modern and historical"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "sqlparse"
 version = "0.4.3"
 description = "A non-validating SQL parser."
@@ -202,7 +222,7 @@ python-versions = ">=2"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "d79b00e1da33b12af0e4e9a18ac522590fab65b77b1cfef903124006c9c2ced5"
+content-hash = "99c06afedad54d037133593d90ba5b7d988e123969878fb42c70b72e28d3f618"
 
 [metadata.files]
 asgiref = []
@@ -211,6 +231,7 @@ click = []
 colorama = []
 django = []
 django-fsm = []
+djangorestframework = []
 flake8 = []
 mccabe = []
 mypy = []
@@ -220,6 +241,7 @@ platformdirs = []
 psycopg2-binary = []
 pycodestyle = []
 pyflakes = []
+pytz = []
 sqlparse = []
 tomli = []
 typing-extensions = []
