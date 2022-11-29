@@ -82,6 +82,17 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+name = "django-filter"
+version = "22.1"
+description = "Django-filter is a reusable Django application for allowing users to filter querysets dynamically."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+Django = ">=3.2"
+
+[[package]]
 name = "django-fsm"
 version = "2.8.1"
 description = "Django friendly finite state machine support."
@@ -350,7 +361,7 @@ python-versions = ">=2"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "ee327abc87629c4140b5107e5085c0f8881ae7d91fc660a87d20cbe231daa8e4"
+content-hash = "8a30ad5a747d44ffc71ba1eba07d3363d795b44c0eee6e170d6734d94677a20e"
 
 [metadata.files]
 asgiref = []
@@ -359,6 +370,7 @@ black = []
 click = []
 colorama = []
 django = []
+django-filter = []
 django-fsm = []
 djangorestframework = []
 djangorestframework-jsonapi = []
