@@ -13,6 +13,7 @@ mypy = "^0.991"
 black = "^22.10.0"
 django-fsm = "^2.8.1"
 djangorestframework = "^3.14.0"
+djangorestframework-jsonapi = "^6.0.0"
 
 [tool.poetry.dev-dependencies]
 pytest-django = "^4.5.2"

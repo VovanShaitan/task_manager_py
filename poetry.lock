@@ -102,6 +102,24 @@ django = ">=3.0"
 pytz = "*"
 
 [[package]]
+name = "djangorestframework-jsonapi"
+version = "6.0.0"
+description = "A Django REST framework API adapter for the JSON:API spec."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+django = ">=3.2,<4.2"
+djangorestframework = ">=3.13,<3.15"
+inflection = ">=0.5.0"
+
+[package.extras]
+django-filter = ["django-filter (>=2.4)"]
+django-polymorphic = ["django-polymorphic (>=3.0)"]
+openapi = ["pyyaml (>=5.4)", "uritemplate (>=3.0.1)"]
+
+[[package]]
 name = "exceptiongroup"
 version = "1.0.4"
 description = "Backport of PEP 654 (exception groups)"
@@ -124,6 +142,14 @@ python-versions = ">=3.8.1"
 mccabe = ">=0.7.0,<0.8.0"
 pycodestyle = ">=2.10.0,<2.11.0"
 pyflakes = ">=3.0.0,<3.1.0"
+
+[[package]]
+name = "inflection"
+version = "0.5.1"
+description = "A port of Ruby on Rails inflector to Python"
+category = "main"
+optional = false
+python-versions = ">=3.5"
 
 [[package]]
 name = "iniconfig"
@@ -324,7 +350,7 @@ python-versions = ">=2"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "d873211d8541d64fbf3181d07c7da6fbac953e96cd03dc6dc6689e1842e9e1f0"
+content-hash = "ee327abc87629c4140b5107e5085c0f8881ae7d91fc660a87d20cbe231daa8e4"
 
 [metadata.files]
 asgiref = []
@@ -335,8 +361,10 @@ colorama = []
 django = []
 django-fsm = []
 djangorestframework = []
+djangorestframework-jsonapi = []
 exceptiongroup = []
 flake8 = []
+inflection = []
 iniconfig = []
 mccabe = []
 mypy = []
