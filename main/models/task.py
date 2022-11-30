@@ -3,6 +3,7 @@ from django_fsm import FSMField, transition
 from main.models.user import User
 from main.models.tag import Tag
 
+
 class Task(models.Model):
     """Model definition for Task."""
 
@@ -12,13 +13,13 @@ class Task(models.Model):
         ON_MONDAY = "on_Monday"
 
     STATES = (
-    "new_task",
-    "in_development",
-    "in_qa",
-    "in_code_review",
-    "ready_for_release",
-    "released",
-    "archived",
+        "new_task",
+        "in_development",
+        "in_qa",
+        "in_code_review",
+        "ready_for_release",
+        "released",
+        "archived",
     )
 
     STATES = list(zip(map(str.upper, STATES), STATES))
