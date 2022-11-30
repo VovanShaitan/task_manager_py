@@ -38,6 +38,8 @@ class TaskAdmin(admin.ModelAdmin):
 
 class CustomAdmin(UserAdmin):
     model = User
+    add_fieldsets = (*UserAdmin.add_fieldsets, ("Custom fields", {"fields": ("role",)}))
+    fieldsets = (*UserAdmin.fieldsets, ("Custom field", {"fields": ("role",)}))
     list_display = ("username", "last_name", "first_name", "role", "email")
     list_editable = ("role",)
 
