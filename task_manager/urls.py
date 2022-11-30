@@ -19,6 +19,5 @@ from django.urls import path
 from main.admin import task_manager_admin_site
 
 urlpatterns = [
-    # path("admin/", admin.site.urls),
     path("admin/", task_manager_admin_site.urls),
 ]
