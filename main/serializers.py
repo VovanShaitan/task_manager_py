@@ -9,7 +9,15 @@ class UserSerializer(ModelSerializer):
         fields = ("id", "username", "last_name", "first_name", "role", "email")
 
 
+class TagSerializer(ModelSerializer):
+    class Meta:
+        model = Tag
+        fields = ("id", "title")
+
+
 class TaskSerializer(ModelSerializer):
+    tag = TagSerializer(read_only=True, many=True)
+
     class Meta:
         model = Task
         fields = (
@@ -23,9 +31,3 @@ class TaskSerializer(ModelSerializer):
             "state",
             "tag",
         )
-
-
-class TagSerializer(ModelSerializer):
-    class Meta:
-        model = Tag
-        fields = ("id", "title")
