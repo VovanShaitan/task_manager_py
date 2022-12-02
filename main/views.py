@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from main.models.tag import Tag
 from main.models.task import Task
 from main.models.user import User
