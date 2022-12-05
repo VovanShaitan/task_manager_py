@@ -3,17 +3,6 @@ from django_fsm import FSMField, transition
 from main.models.user import User
 from main.models.tag import Tag
 
-STATES = (
-    "new_task",
-    "in_development",
-    "in_qa",
-    "in_code_review",
-    "ready_for_release",
-    "released",
-    "archived",
-)
-STATES = list(zip(STATES, STATES))
-
 
 class Task(models.Model):
     """Model definition for Task."""
@@ -23,18 +12,30 @@ class Task(models.Model):
         BY_MORNING = "by_morning"
         ON_MONDAY = "on_Monday"
 
+    STATES = (
+        "new_task",
+        "in_development",
+        "in_qa",
+        "in_code_review",
+        "ready_for_release",
+        "released",
+        "archived",
+    )
+
+    STATES = list(zip(map(str.upper, STATES), STATES))
+
     title = models.CharField(max_length=255, blank=False)
     description = models.TextField(blank=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    expired_at = models.DateField(blank=False)
+    expired_at = models.DateField(auto_now=True)
     state = FSMField(default=STATES[0], choices=STATES)
     priority = models.CharField(
         max_length=255, default=Priority.IMMEDIATELY, choices=Priority.choices
     )
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="author")
+    author = models.ForeignKey(User, on_delete=models.PROTECT, related_name="author")
     assignee = models.ForeignKey(
-        User, models.SET_NULL, blank=True, null=True, related_name="assignee"
+        User, on_delete=models.PROTECT, related_name="assignee", default=None
     )
     tag = models.ManyToManyField(Tag)
 
