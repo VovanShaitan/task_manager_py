@@ -33,9 +33,11 @@ class Task(models.Model):
     priority = models.CharField(
         max_length=255, default=Priority.IMMEDIATELY, choices=Priority.choices
     )
-    author = models.ForeignKey(User, on_delete=models.PROTECT, related_name="author")
+    author = models.ForeignKey(
+        User, on_delete=models.PROTECT, related_name="task_author", null=True
+    )
     assignee = models.ForeignKey(
-        User, on_delete=models.PROTECT, related_name="assignee", default=None
+        User, on_delete=models.PROTECT, related_name="task_assignee", null=True
     )
     tag = models.ManyToManyField(Tag)
 
