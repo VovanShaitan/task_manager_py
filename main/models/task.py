@@ -28,7 +28,7 @@ class Task(models.Model):
     description = models.TextField(blank=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    expired_at = models.DateField(auto_now=True)
+    expired_at = models.DateField(null=True, blank=True)
     state = FSMField(default=STATES[0], choices=STATES)
     priority = models.CharField(
         max_length=255, default=Priority.IMMEDIATELY, choices=Priority.choices
