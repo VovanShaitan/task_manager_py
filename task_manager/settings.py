@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "django_fsm",
     "rest_framework",
     "django_filters",
+    "drf_yasg",
     "main.apps.MainConfig",
 ]
 

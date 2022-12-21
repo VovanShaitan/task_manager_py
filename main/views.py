@@ -43,7 +43,7 @@ class UserViewSet(ModelViewSet):
 class TagViewSet(ModelViewSet):
     queryset = Tag.objects.order_by("id")
     serializer_class = TagSerializer
-    permission_classes = [OnlyStaffCanDeletedObjectPermission]  
+    permission_classes = [OnlyStaffCanDeletedObjectPermission]
 
 
 class TaskViewSet(ModelViewSet):
